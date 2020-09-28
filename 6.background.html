@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiple background</title>
+    <style>
+        body {
+            background-color: rgb(42, 58, 61);
+        }
+
+        .map {
+            width: 800px;
+            height: 400px;
+            background-image: url("https://i.postimg.cc/8c8sy7Db/map1.jpg");
+            margin: 0 auto;
+        }
+
+        /* 多重背景應用 */
+        .map:hover {
+            /*                                                     x軸 y軸 不重複 */
+            background: url("https://i.postimg.cc/L4Z1zpRT/1.png") center center no-repeat,
+                url("https://i.postimg.cc/VLQbgVkc/2.png") right 60% no-repeat,
+                url("https://i.postimg.cc/4xXHkHcL/3.png") 40% bottom no-repeat,
+                url("https://i.postimg.cc/Gp2B90qv/4.png") 20% 30% no-repeat,
+                url("https://i.postimg.cc/8c8sy7Db/map1.jpg");
+            background-size: 10%, 10%, 10%, 10%, auto;
+        }
+
+        .city {
+            width: 800px;
+            height: 250px;
+            background: url("https://i.postimg.cc/fbJLDcRK/city.jpg") center 20% no-repeat;
+            outline: 1px solid #ccc;
+            margin: 0 auto;
+        }
+
+        /* 當指定長寬就會變形，因此有各種預設值auto | length | cover | contain | initial | inherit  */
+        .bgz {
+            background-size: 300px 300px;
+
+        }
+
+        /* contain保持圖片比例 但會留空白 */
+
+        .contain {
+            background-size: contain;
+        }
+
+        /* 會填滿整個區塊 */
+        .cover {
+            background-size: cover;
+        }
+
+        /* background-origin(圖片起始位置) 預設為padding-box ，以盒模型為依據去決定圖片開始的位置*/
+        .box {
+            width: 300px;
+            height: 300px;
+            background: url("https://i.postimg.cc/26LVFQp6/nook-small.jpg") no-repeat;
+            margin: 10px;
+            padding: 20px;
+            border: 10px dashed rgba(255, 255, 255, 0.3);
+            background-size: contain;
+
+            float: left;
+            /* margin: 0 auto; */
+        }
+
+        .border-box {
+            background-origin: border-box;
+        }
+
+        .padding-box {
+            background-origin: padding-box;
+        }
+
+        .content-box {
+            background-origin: content-box;
+        }
+
+        /* background-clip裁切點起始位置為border-box */
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background: url("https://i.postimg.cc/26LVFQp6/nook-small.jpg") repeat;
+            margin: 10px;
+            padding: 20px;
+            border: 10px dashed rgba(255, 255, 255, 0.3);
+            background-size: contain;
+            float: left;
+        }
+
+        .clip-border-box {
+            background-clip: border-box;
+        }
+
+        .clip-padding-box {
+            background-clip: padding-box;
+        }
+
+        .clip-content-box {
+            background-clip: content-box;
+        }
+
+
+        /* 設定文字顏色為圖片填滿​ */
+        .background-clip h2 {
+            font-size: 100px;
+            color: transparent;
+            background: url("./images/mosaic-3394375_640.jpg");
+            background-clip: text;
+            /* 新的技術要加CSS 前綴 (prefix)
+            ○ -webkit- : chrome, safari ​
+            ○ -moz- : firefox ​
+            ○ -ms- : ie, edge ​
+            ○ -o- : opera */
+            -webkit-background-clip: text;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map"></div>
+    <div class="city bgz"></div>
+    <div class="city contain"></div>
+    <div class="city cover"></div>
+    <div class="box border-box"></div>
+    <div class="box padding-box"></div>
+    <div class="box content-box"></div>
+    <div class="box1 clip-border-box"></div>
+    <div class="box1 clip-padding-box"></div>
+    <div class="box1 clip-content-box"></div>
+    <div class="background-clip">
+        <h2>HELLO</h2>
+    </div>
+</body>
+
+</html>

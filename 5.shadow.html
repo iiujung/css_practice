@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadow</title>
+    <style>
+        .container {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #afa;
+            transition: .5s;
+            margin: 20px;
+        }
+
+        /* 第一個 值為水平偏移
+○ 第二個 值為垂直偏移
+○ 第三個 值為模糊程度
+○ 第四個 值為顏色
+○ 顏色使用通用名稱或 rgba / hsla 用法 */
+        .box1:hover {
+            box-shadow: 10px 10px 20px #666;
+        }
+
+        /* 陰影設定完整數值 */
+        .box2:hover {
+            /*           x    y   blur spread(擴散) color inset(內陰影) */
+            box-shadow: 5px 10px 30px 20px rgb(112, 145, 111, 0.5) inset;
+        }
+
+        /* 利用多重陰影繪製圖案 */
+        .mickey {
+            margin: 20px;
+            width: 150px;
+            height: 150px;
+            background-color: #111;
+            border-radius: 50%;
+            box-shadow: 100px 100px 0 20px #111, 200px 0 0 0 #111;
+        }
+
+        /* 使用多重陰影時圖層有先後順序：前面會蓋住後面
+○ 使用 inset 可以設定成內陰影 */
+        .egg {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ffc;
+            box-shadow: 0 0 50px blue inset, 0 0 80px pink inset, 0 0 100px darkslateblue inset;
+        }
+
+        ​
+
+        /* 
+   ○  第一個 值為水平偏移 ​
+○  第二個 值為垂直偏移 ​
+○  第三個 值為模糊程度 
+○  第四個 值為顏色  */
+        .text1 {
+            font-size: 20px;
+            color: floralwhite;
+            text-shadow: 2px 3px 5px salmon;
+        }
+
+        h2 {
+            color: floralwhite;
+            text-shadow: 2px 3px 5px salmon;
+
+        }
+
+        h1 {
+            color: snow;
+            text-shadow: 0 0 4px pink, 0 0 8px purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container box-shadow">
+        <p>box-shadow with hover </p>
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        multiple box-shadow mickey
+        <div class="mickey"></div>
+        multiple box-shadow mickey
+        <div class="egg"></div>
+        text-shadow
+
+    </div>
+    <div class="container text-shadow">
+        <p class="text1">shadow</p>
+        <h2>shadow</h2>
+        <h1>shadow</h1>
+    </div>
+
+</body>
+
+</html>

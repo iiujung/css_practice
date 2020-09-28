@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card</title>
+    <style>
+        body {
+            background-color: #ffa;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .circle img {
+            height: 100%;
+        }
+
+        .card {
+            height: 400px;
+            width: 300px;
+            border-radius: 25px;
+            background-color: #fff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            /* 直接對卡片做，子層元素就會繼承 */
+            text-align: center;
+        }
+
+        .card p {
+            width: 80%;
+            border-top: 1px solid #Ccc;
+            margin: 0 auto;
+            padding-top: 10px;
+        }
+
+        .container {
+            border: 20px solid transparent;
+            /* 利用小圖製作圖片的邊框 數字:代表圖片在何處切割(可以是數字或%數) 文字:代表重複方式 repeat round stretch space*/
+            border-image: url("https://i.postimg.cc/vmN4VPNk/frame-border.png") 80 stretch;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="circle">
+            <img src="https://i.postimg.cc/Qx3H1Kf8/cat-5414737-1280.jpg" alt="">
+        </div>
+        <div class="container">
+            <h2>kitty</h2>
+            <p>hello,nice to meet you</p>
+        </div>
+    </div>
+</body>
+
+</html>

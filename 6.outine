@@ -1,0 +1,4 @@
+border 會佔寬度(排版時須注意計算)， outline 不佔寬度。
+○ border 可以僅設定某一邊，outline 不行。
+○ border 距離靠 padding調整，outline 則是 outline-offset
+○ outline 可以拿來看別人如何切版（小技巧）

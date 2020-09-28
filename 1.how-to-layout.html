@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how-to-layout</title>
+    <style>
+        html {
+            font-size: 12px;
+        }
+
+        .container {
+            width: 800px;
+            background-color: #ccc;
+            margin: 30px auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 12pt;
+        }
+
+        .header {
+            /* 調整內距置中效果 */
+            padding: 10px;
+            background-color: #faf;
+            /* 跟下面推出一個距離 */
+            margin-bottom: 10px;
+        }
+
+        .menu {
+            background-color: #ffa;
+            width: 240px;
+            height: 220px;
+            float: left;
+        }
+
+        /* 1.一開始下float發現他上不去，被menu擋住了因為是區塊元素 */
+        .content {
+            background-color: #afa;
+            width: 550px;
+            height: 220px;
+            float: right;
+            /* 一般排版時方便瀏覽可以設定 */
+            min-height: 700px;
+        }
+
+        .footer {
+            background-color: #aaf;
+            /* 當沒下的時候發現Footer會往上擠 */
+            clear: both;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 一開始float是為了文繞圖而製作的 */
+        img {
+            width: 200px;
+            float: left;
+        }
+
+        .box {
+            background: lightseagreen;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="menu">menu</div>
+        <div class="content">content
+            <div class="box-img">
+                <img src="https://i.postimg.cc/Qx3H1Kf8/cat-5414737-1280.jpg" alt="">
+
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quos, odit quasi nostrum corporis
+                dignissimos ducimus debitis reprehenderit velit. Eveniet itaque inventore deserunt, earum
+                perspiciatis, neque impedit labore odit rem saepe dolor sequi soluta animi repellendus sint ad
+                blanditiis? Culpa repellat quo voluptas quis fugiat, soluta quod nostrum minima eos?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi eligendi cum vitae illum culpa nobis
+                pariatur? Quis dicta beatae in assumenda repudiandae eligendi, cupiditate ullam officia accusantium
+                adipisci placeat delectus, accusamus praesentium deserunt quibusdam eaque vitae harum. Excepturi
+            </p>
+
+
+            <div class="word">
+                <p>行內元素</p>
+
+                <span>H</span><span>E</span><span>L</span><span>L</span><span>O</span>
+                <p>區塊元素</p>
+
+                <p>h</p>
+                <p>e</p>
+                <p>l</p>
+                <p>l</p>
+                <p>o</p>
+            </div>
+            <div class="box">a</div>
+            <div class="box">b</div>
+            <div class="box">c</div>
+        </div>
+
+        <div class="footer">footer</div>
+    </div>
+
+</body>
+
+</html>
